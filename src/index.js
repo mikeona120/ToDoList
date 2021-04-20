@@ -1,47 +1,28 @@
-//import {} from './modules';
+import {task, project} from './modules';
 
-const project = (projectTitle,task) => {
 
-    let list = [];
+const task1 = task("My task","Description goes here","Due date here","High Priority");
+// console.log(task1.getTitle());
+// console.log(task1.getDescription());
+// console.log(task1.getDueDate());
+// console.log(task1.getPriority());
+const task2 = task("My next task","Description goes here","Due date here","High Priority");
 
-    const getProjectTitle = () => console.log(projectTitle);
+const project1 = project("Project 1");
+project1.addToList(task1);
+project1.addToList(task2);
+project1.getTitle();
 
-    const getToDoList = () => {
+const project2 = project("Project 2");
+project2.addToList(task1);
+project2.addToList(task2);
+project2.addToList(task2);
+project2.addToList(task2);
 
-        list.forEach(function(entry) {
-            console.log(entry.getTitle());
-        });
+let projects = [project1,project2];
 
-    };
-
-    const addToList = (task) => list.push(task);
-
-    
-    return {getProjectTitle, getToDoList, addToList};
-};
-
-const todo = (title, description, dueDate, priority) => {
-    
-    let done = false;
-
-    const getTitle = () => title;
-    const getDescription = () => description;
-    const getDueDate = () => dueDate;
-    const getPriority = () => priority;
-    const isDone = () => done;
-    const completeTask = () => done = true;
-
-    
-    
-    return {getTitle, getDescription, getDueDate, getPriority, isDone, completeTask};
-};
-
-const todo1 = todo("My task","Description goes here","Due date here","High Priority");
-const todo2 = todo("My next task","Description goes here","Due date here","High Priority");
-
-const project1 = project("My title");
-
-project1.addToList(todo1);
-project1.addToList(todo2);
-
-project1.getToDoList();
+let sidebar = document.getElementById('sidebar-content');
+var x;
+for(x=0; x<projects.length; x++){
+    sidebar.innerHTML += projects[x].getTitle() + "<br />" + projects[x].getTaskList() + "<br />";
+}

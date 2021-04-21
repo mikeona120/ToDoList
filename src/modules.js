@@ -31,5 +31,10 @@ const project = (projectTitle,task) => {
     return {getTitle, addToList, getTaskList};
 };
 
+const addNewProject = {
+    
 
-export {task, project}
+}
+
+
+export {task, project, addNewProject}

@@ -1,20 +1,29 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <link rel="stylesheet" href="style.css">
-    <title>Task Master</title>
-</head>
-<body>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Task Master</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
 
-    <div id="header">Task Master</div>
-    <div id="sidebar-title">All Projects
-        <div id="sidebar-content"></div>
-    </div>
+        <div id="header">Task Master</div>
 
 
+        <div class="grid-container">
+
+            <div class="grid-child" id="sidebar">Projects<br><br>
+                <div id="sidebar-content"></div>
+            </div>
+
+            <div class="grid-child" id="main-panel">
+                <div id="main-panel-content">Select a project.</div>
+            </div>
+
+        </div>
+        
+    </body>
+    <script src="main.js"></script>
     
-</body>
-<script src="main.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </html>
